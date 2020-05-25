@@ -1,7 +1,7 @@
 <!-- Logo -->
 <a href="{{ site_url('dashboard') }}" class="logo">
 	<!-- mini logo for sidebar mini 50x50 pixels -->
-	<span class="logo-mini"><b>TMD</b></span>
+	<span class="logo-mini"><b>SHINE</b></span>
 	<!-- logo for regular state and mobile devices -->
 	<span class="logo-lg"><img src="{{ base_url }}dist/img/tmd_logo_white.png"></span>
 </a>
