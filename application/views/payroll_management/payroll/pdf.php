@@ -106,7 +106,7 @@
 					<?php if ($provider_payment_summary['initial_visit_telehealth']['total'] != 0 ): ?>
 
 						<tr>
-							<th style="border-bottom: 1px solid #d2d6de;">Initial Visit (Office)</th>
+							<th style="border-bottom: 1px solid #d2d6de;">Initial Visit (Telehealth)</th>
 							<td style="border-bottom: 1px solid #d2d6de;"><?php echo $provider_payment_summary['initial_visit_telehealth']['qty'] ?></td>
 							<td style="border-bottom: 1px solid #d2d6de;">$<?php echo $provider_payment_summary['initial_visit_telehealth']['amount'] != '' ? $provider_payment_summary['initial_visit_telehealth']['amount'] : 0 ?></td>
 							<td style="border-bottom: 1px solid #d2d6de;">$<?php echo $provider_payment_summary['initial_visit_telehealth']['total'] ?></td>
