@@ -55,16 +55,18 @@
     										<tr>
     											<td>{{ list.get_combined_time() }}</td>
     											<td>
-                                                    <p>
-                                                        {{ list.patient_name }}
-                                                        <span>
-                                                            {{ list.patient_address }}<br>
-                                                            {{ list.patient_phoneNum }}<br><br>
-                                                            <strong>Supervising MD:</strong> {{ list.supervisingMD_firstname ~ ' ' ~ list.supervisingMD_lastname }}
-                                                        </span>
-                                                    </p>
-                                                </td>
-    	                                        <td><p>{{ list.hhc_name }}<span>{{ list.hhc_contact_name }}<br>{{ list.hhc_phoneNumber }}</span></p></td>
+                            <p>
+                                {{ list.patient_name }}
+                                <span>
+                                  {{ list.patient_medicareNum }}<br>
+                                    {{ list.patient_address }}<br>
+                                    {{ list.patient_phoneNum }}<br><br>
+                                    <strong>Caregiver/Family:</strong> {{ list.patient_caregiver_family }}<br>
+                                    <strong>Supervising MD:</strong> {{ list.supervisingMD_firstname ~ ' ' ~ list.supervisingMD_lastname }}
+                                </span>
+                            </p>
+                          </td>
+                          <td><p>{{ list.hhc_name }}<span>{{ list.hhc_contact_name }}<br>{{ list.hhc_phoneNumber }}</span></p></td>
     											<td><p>Type of Visit : {{ list.tov_name }}<span>Other Notes: <br>{{ list.prsl_notes|nl2br }}</span></p></td>
     										</tr>
 

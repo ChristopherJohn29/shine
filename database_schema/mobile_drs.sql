@@ -36,6 +36,8 @@ CREATE TABLE `home_health_care` (
 ) ENGINE=InnoDB AUTO_INCREMENT=341 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+CREATE TABLE `home_health_care_notes` ( `hhcn_id` INT NOT NULL AUTO_INCREMENT , `hhcn_notes` VARCHAR(2000) NOT NULL , `hhcn_date` DATE NOT NULL , `hhcn_userID` INT NOT NULL , `hhcn_hhcID` INT NOT NULL, `hhcn_archive` INT NULL, PRIMARY KEY (`hhcn_id`)) ENGINE = InnoDB;
+
 --
 -- Table structure for table `patient`
 --
@@ -373,7 +375,7 @@ CREATE TABLE `user` (
   `user_password` varchar(255) DEFAULT NULL,
   `user_roleID` int(10) unsigned DEFAULT NULL,
   `user_sessionID` varchar(255) DEFAULT NULL,
-  `user_archive` tinyint(1) DEFAULT NULL,
+  `user_archive` TINYINT(1) NULL
   PRIMARY KEY (`user_id`),
   KEY `user_roleID_idx` (`user_roleID`),
   CONSTRAINT `user_roleID` FOREIGN KEY (`user_roleID`) REFERENCES `roles` (`roles_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -410,3 +412,4 @@ CREATE TABLE `user_logs` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-05-25 11:54:09
+
