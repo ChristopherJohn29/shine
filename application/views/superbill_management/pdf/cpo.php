@@ -34,6 +34,7 @@
 					<td width="100px" style="<?php echo $borderStyle; ?>"></td>
 					<td width="90px" style="<?php echo $borderStyle; ?>"></td>
 					<td width="90px" style="<?php echo $borderStyle; ?>"></td>
+					<td width="90px" style="<?php echo $borderStyle; ?>"></td>
 				<?php else: ?>
 					<td width="90px" style="<?php echo $borderStyle; ?>"><?php echo $transaction['patient_name']; ?></td>
 					<td width="70px" style="<?php echo $borderStyle; ?>"><?php echo $transaction['medicare']; ?></td>

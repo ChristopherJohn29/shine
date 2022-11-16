@@ -18,14 +18,16 @@
 		<?php foreach($lists as $list): ?>
 			<tr>
 				<td width="120px" style="border-bottom: 1px solid #d2d6de;">
-					<?php echo $list->get_combined_time(); ?>		
+					<?php echo $list->get_combined_time(); ?>
 				</td>
 				<td width="190px" style="border-bottom: 1px solid #d2d6de;">
 					<?php echo $list->patient_name; ?><br>
-					<?php echo $list->patient_medicareNum; ?><br>
-					<?php echo $list->patient_address; ?><br>
-					<?php echo $list->patient_phoneNum; ?><br><br>
+					<strong>DOB:</strong> <?php echo $list->get_date_format($list->patient_dateOfBirth); ?><br>
+					<strong>Medicare:</strong> <?php echo $list->patient_medicareNum; ?><br>
+					<strong>Address:</strong> <?php echo $list->patient_address; ?><br>
+					<strong>Phone:</strong> <?php echo $list->patient_phoneNum; ?><br><br>
 					<strong>Caregiver/Family:</strong> <?php echo $list->patient_caregiver_family; ?><br>
+					<strong>Spouse:</strong> <?php echo $spouse[$list->patient_spouse][0]['patient_name']; ?><br>
 					<strong>Supervising MD:</strong> <?php echo $list->supervisingMD_firstname . ' ' . $list->supervisingMD_lastname; ?>
 				</td>
 	            <td width="190px" style="border-bottom: 1px solid #d2d6de;">
@@ -34,11 +36,16 @@
     				<?php echo $list->hhc_phoneNumber; ?>
 	            </td>
 				<td width="270px" style="border-bottom: 1px solid #d2d6de;">
+					Reason for Visit : <?php echo $list->pt_reasonForVisit; ?><br>
 					Type of Visit : <?php echo $list->tov_name; ?><br>
+					<?php echo $list->pt_aw_ippe_code == 'G0402' ? 'With IPPE <br>' : ''?>
+					<?php echo $list->pt_aw_ippe_code == 'G0438' ? 'With AW <br>' : ''?>
+					<?php echo $list->pt_aw_ippe_code == 'G0439' ? 'With AW <br>' : ''?>
+					<?php echo $list->pt_aw_ippe_code ? '' : 'No AW / IPPE <br>'?>
 					Other Notes: <br>
 					<?php echo nl2br($list->prsl_notes); ?>
 				</td>
-			</tr>			
+			</tr>
 		<?php endforeach; ?>
 	</tbody>
 </table>

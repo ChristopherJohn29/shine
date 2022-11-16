@@ -46,6 +46,10 @@
              						<th>Email:</th>
              						<td>{{ record.hhc_email }}</td>
              					</tr>
+                                 <tr>
+             						<th>Second Email:</th>
+             						<td>{{ record.hhc_email_additional }}</td>
+             					</tr>
              					<tr>
              						<th>Address:</th>
              						<td>{{ record.hhc_address }}</td>
@@ -95,11 +99,15 @@
                                                     <th style="width: 150px;">{{ note.get_date_format(note.hhcn_date) }}</th>
                                                     <td>{{ note.hhcn_notes }}</td>
                                                     <td style="width: 150px;">{{ note.getNotesFromUserID() }}</td>
-                                                   
+
                                                     <td style="width: 120px;">
+
                                                         <a {% if session['user_id'] == note.hhcn_userID %} href="{{ site_url("home_health_care_management/notes/edit/#{ record.hhc_id }/#{ note.hhcn_id }") }}" {% endif %}><span class="label label-primary">Update</span></a>
+
                                                         <a {% if session['user_id'] == note.hhcn_userID %} href="{{ site_url("ajax/home_health_care_management/notes/delete/#{ record.hhc_id }/#{ note.hhcn_id }") }}" data-delete-btn {% endif %}><span class="label label-primary">Delete</span></a>
+
                                                     </td>
+                                                    
                                                 </tr>
 
                                             {% endfor %}
@@ -138,6 +146,5 @@
           </div>
 
       </div>
-
 
 {% endblock %}

@@ -80,8 +80,9 @@
 													<td style="{{ borderTopStyle }}"></td>
 													<td style="{{ borderTopStyle }}"></td>
 													<td style="{{ borderTopStyle }}"></td>
+													<td style="{{ borderTopStyle }}"></td>
 												{% else %}
-													<td	td style="{{ borderTopStyle }}">{{ transaction['patient_name'] }}</td>
+													<td style="{{ borderTopStyle }}">{{ transaction['patient_name'] }}</td>
 													<td style="{{ borderTopStyle }}">{{ transaction['medicare'] }}</td>
 													<td style="{{ borderTopStyle }}">{{ transaction['dob'] }}</td>
 													<td style="{{ borderTopStyle }}">{{ transaction['icd10'] }}</td>

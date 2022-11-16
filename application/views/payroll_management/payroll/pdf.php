@@ -9,11 +9,10 @@
 	<thead>
 		<tr>
 			<th width="80px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8;">Date of Service</th>
-			<th width="120px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8">Type of Visit</th>
+			<th width="150px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8">Type of Visit</th>
 			<th width="60px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8">AW / IPPE</th>
 			<th width="50px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8">ACP</th>
-			<th width="160px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8">Patient Name</th>
-			<th width="50px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8">Mileage</th>
+			<th width="180px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8">Patient Name</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -22,7 +21,7 @@
 				<td width="80px" style="border-bottom: 1px solid #d2d6de;">
 					<?php echo $provider_transaction->get_date_format($provider_transaction->pt_dateOfService); ?>
 				</td>
-				<td width="120px" style="border-bottom: 1px solid #d2d6de;">
+				<td width="150px" style="border-bottom: 1px solid #d2d6de;">
 					<?php echo $provider_transaction->tov_name; ?>
 				</td>
 				<td width="60px" style="border-bottom: 1px solid #d2d6de;">
@@ -31,12 +30,10 @@
 				<td width="50px" style="border-bottom: 1px solid #d2d6de;">
 					<?php echo $provider_transaction->get_selected_choice_format($provider_transaction->pt_acp); ?>
 				</td>
-				<td width="160px" style="border-bottom: 1px solid #d2d6de;">
+				<td width="180px" style="border-bottom: 1px solid #d2d6de;">
 					<?php echo $provider_transaction->patient_name; ?>
 				</td>
-				<td width="50px" style="border-bottom: 1px solid #d2d6de;">
-					<?php echo $provider_transaction->pt_mileage; ?>
-				</td>
+		
 			</tr>			
 		<?php endforeach; ?>
 	</tbody>
@@ -139,7 +136,7 @@
 					<?php if ($provider_payment_summary['follow_up_telehealth']['total'] != 0 ): ?>
 
 						<tr>
-						<th style="border-bottom: 1px solid #d2d6de;">Follow-Up Visit (TeleHealth)</th>
+							<th style="border-bottom: 1px solid #d2d6de;">Follow-Up Visit (TeleHealth)</th>
 							<td style="border-bottom: 1px solid #d2d6de;"><?php echo $provider_payment_summary['follow_up_telehealth']['qty'] ?></td>
 							<td style="border-bottom: 1px solid #d2d6de;">$<?php echo $provider_payment_summary['follow_up_telehealth']['amount'] != '' ? $provider_payment_summary['follow_up_telehealth']['amount'] : 0 ?></td>
 							<td style="border-bottom: 1px solid #d2d6de;">$<?php echo $provider_payment_summary['follow_up_telehealth']['total'] ?></td>
@@ -182,7 +179,7 @@
 					</tr>
 					<tr>
 						<td colspan="3" style="border-bottom: 1px solid #d2d6de;"><span style="font-size:12px">Grand Total</span></td>
-						<td style="border-bottom: 1px solid #d2d6de;"><span style="font-size:12px; font-weight:bold;">$<?php echo number_format($total, 2); ?></span></td>
+						<td style="border-bottom: 1px solid #d2d6de;"><span style="font-size:10px; font-weight:bold;">$<?php echo number_format($total, 2); ?></span></td>
 					</tr>
 				</tbody>
 			</table>
