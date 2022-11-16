@@ -1,6 +1,6 @@
 # EHR System
 
-Create a secured database system for The Mobile Drs for their patient’s medical records.
+Create a secured database system for Shine MMG for their patient’s medical records.
 
 ## Getting Started
 

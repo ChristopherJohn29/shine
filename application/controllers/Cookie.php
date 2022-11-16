@@ -17,7 +17,7 @@ class Cookie extends CI_Controller {
 
         echo "<center><br><br>
         <br>
-        <br>The EHR System is restricted to The Mobile Drs employees only.
+        <br>The EHR System is restricted to Shine MMG employees only.
         <br>
         <br>
         If you are an employee and wish to access the EHR System,<br> send the unique Computer Cookie below to your admin.  <br> <br>
