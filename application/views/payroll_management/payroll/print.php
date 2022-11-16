@@ -116,7 +116,7 @@
 									{% if provider_payment_summary['initial_visit_telehealth']['total'] != 0 %}
 										
 										<tr>
-											<th><strong>Initial Visit (Telehealth)</strong></th>
+											<th><strong>Initial Visit (Office)</strong></th>
 											<td>{{ provider_payment_summary['initial_visit_telehealth']['qty'] }}</td>
 											<td>${{ provider_payment_summary['initial_visit_telehealth']['amount'] != '' ? provider_payment_summary['initial_visit_telehealth']['amount'] : 0 }}</td>
 											<td>${{ provider_payment_summary['initial_visit_telehealth']['total'] }}</td>

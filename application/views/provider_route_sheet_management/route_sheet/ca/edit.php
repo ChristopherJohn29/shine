@@ -141,7 +141,9 @@
 													  		data-mobiledrs_autosuggest 
 													  		data-mobiledrs_autosuggest_url="{{ site_url('ajax/patient_management/profile/search') }}"
 													  		data-mobiledrs_autosuggest_dropdown_id="prsl_patientID_dropdown{{ index > 0 ? "_#{ index + 1 }" }}"
-													  		value="{{ list.patient_name }}">
+													  		value="{{ list.patient_name }}"
+															  name="prsl_patientID_name[]" >
+															  
 
 													  	<div data-mobiledrs_autosuggest_dropdown id="prsl_patientID_dropdown{{ index > 0 ? "_#{ index + 1 }" }}" style="width: 100%;">
 												  	  	</div>
@@ -161,7 +163,6 @@
 													<span class="help-block">{{ form_error('prsl_patientID') }}</span>
 												</div>
 
-												<div class="col-md-4 form-group {{ form_error('prsl_dateRef') ? 'has-error' : '' }}">
 
 												<div class="col-md-6 form-group {{ form_error('prsl_tovID') ? 'has-error' : '' }}">
 												

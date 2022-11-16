@@ -57,6 +57,17 @@ class Transaction_model extends \Mobiledrs\core\MY_Models {
 
 	}
 
+	public function get_latest_transaction_ids(){
+
+			$this->db->select('pt_id, pt_dateOfService, pt_patientID');
+			$this->db->from('patient_transactions');
+			// $this->db->group_by('pt_patientID');
+			$this->db->order_by('pt_dateOfService', 'DESC');
+			$result = $this->db->get()->result_array();
+
+			return $result;
+	}
+
 	public function prepare_data() : array
 	{
 		$this->prepare_entity_data();
@@ -92,6 +103,16 @@ class Transaction_model extends \Mobiledrs\core\MY_Models {
 			$non_admit_checked_by = '';
 		}
 
+		if(!empty($this->record_entity->is_early_discharge)){
+			if(empty($this->record_entity->is_early_discharge_checked_by)){
+				$is_early_discharge_checked_by = $this->session->userdata('user_fullname');
+			} else {
+				$is_early_discharge_checked_by = $this->record_entity->is_early_discharge_checked_by;
+			}
+		} else {
+			$is_early_discharge_checked_by = '';
+		}
+
 		
 
 		$toReturn = [
@@ -113,8 +134,11 @@ class Transaction_model extends \Mobiledrs\core\MY_Models {
 			'pt_mileage' => $this->record_entity->pt_mileage,
 			'pt_others' => $this->record_entity->pt_others,
 			'pt_icd10_codes' => $this->record_entity->pt_icd10_codes,
+			'pt_reasonForVisit' => $this->record_entity->pt_reasonForVisit,
 			'pt_dateRef' => $this->record_entity->set_date_format($this->record_entity->pt_dateRef),
 			'pt_dateRefEmailed' => $this->record_entity->set_date_format($this->record_entity->pt_dateRefEmailed),
+			'early_discharge_date' => $this->record_entity->set_date_format($this->record_entity->early_discharge_date),
+			'is_early_discharge' => empty($this->record_entity->is_early_discharge) ? 0 : $this->record_entity->is_early_discharge,
 			'pt_notes' => $this->record_entity->pt_notes,
 			'pt_supervising_mdID' => empty($this->record_entity->pt_supervising_mdID) ? null : $this->record_entity->pt_supervising_mdID,
 			'pt_status' => empty($this->record_entity->pt_status) ? null : $this->record_entity->pt_status,
@@ -124,6 +148,7 @@ class Transaction_model extends \Mobiledrs\core\MY_Models {
 			'no_homehealth_ref_checked_by' =>  $no_homehealth_ref_checked_by,
 			'not_our_md_checked_by' => $not_our_md_checked_by,
 			'non_admit_checked_by' => $non_admit_checked_by,
+			'is_early_discharge_checked_by' => $is_early_discharge_checked_by,
 			'is_ca' => $this->record_entity->is_ca ?  $this->record_entity->is_ca : NULL,
 			'patient_hhcID' => empty($_POST['patient_homehealth']) ? null : $this->record_entity->patient_hhcID,
 			'transaction_file' => $this->record_entity->transaction_file,

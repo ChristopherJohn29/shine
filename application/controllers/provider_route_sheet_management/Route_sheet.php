@@ -302,8 +302,8 @@ class Route_sheet extends \Mobiledrs\core\MY_Controller {
 					],
 					[
 						'key' => ' provider_route_sheet.prs_archive',
-						'condition' => '',
-						'value' => 'IS NOT NULL'
+						'condition' => '=',
+						'value' => NULL
 					],
 					[
 						'key' => ' provider_route_sheet.prs_dateOfService',
@@ -569,7 +569,7 @@ class Route_sheet extends \Mobiledrs\core\MY_Controller {
 			$this->pdf->page_orientation = 'L';
 			$this->pdf->generate_as_attachement($html, $tmpDir . $filename);
 
-			$this->email->from('info@themobiledrs.com', 'The MobileDrs');
+			$this->email->from('michelle@shinemmg.com', 'Shine MMG');
 			$this->email->to($page_data['record']->provider_email);
 			$this->email->subject('Your routesheet for the date of ' . $dateOfService);
 			$this->email->message($emailTemplate);

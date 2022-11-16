@@ -168,6 +168,19 @@ class MY_Models extends \CI_Model {
 			}
 		}
 
+		if (isset($params['where_in_list'])) 
+		{
+	
+			$this->db->group_start();
+			$ids_chunk = array_chunk($params['where_in_list']['values'],25);
+			foreach($ids_chunk as $ids)
+			{
+				$this->db->or_where_in($params['where_in_list']['key'], $ids);
+			}
+
+			$this->db->group_end();
+		}
+
 		if (isset($params['where']))
 		{
 			foreach ($params['where'] as $value) {
@@ -204,18 +217,20 @@ class MY_Models extends \CI_Model {
 			}
 		}
 
-		if (isset($params['where_in_list'])) 
+		
+
+		if (isset($params['groupby'])) 
 		{
-			$this->db->where_in(
-				$params['where_in_list']['key'], 
-				$params['where_in_list']['values']
-			);
+			$this->db->group_by($params['groupby']);
 		}
+		
 
 		if (isset($params['order'])) 
 		{
 			$this->db->order_by($params['order']['key'], $params['order']['by']);
 		}
+
+		
 
 	
 

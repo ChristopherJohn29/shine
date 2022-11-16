@@ -78,13 +78,13 @@ class Logs extends \Mobiledrs\core\MY_AJAX_Controller {
                 $row[] = '<a href="'.site_url($log->user_log_link).'" target="_blank">
                         <span class="label label-primary">View</span>
                     </a>';
-            } else{
+            } else {
                 $row[] = '';
             }
 
             $data[] = $row;
 
-            $totalFiltered = 1;
+            $totalFiltered += 1;
         }
 
         $response = [

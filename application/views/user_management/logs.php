@@ -22,7 +22,7 @@
 			<div class="table-responsive">
 				<table id="logs" class="table no-margin table-hover">
 
-					<thead>					
+					<thead>
 						<tr>
 							<th>Username</th>
 							<th>Time</th>
@@ -33,6 +33,7 @@
 					</thead>
 
 					<tbody>
+
 					</tbody>
 					
 					<tfoot>

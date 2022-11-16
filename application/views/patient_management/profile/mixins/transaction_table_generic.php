@@ -1,6 +1,6 @@
 <div class="table-responsive">
     <table class="table no-margin table-hover">
-    <thead>
+        <thead>
             <tr>
                 <th>Intake Received</th>
                 <th>Date of Service</th>

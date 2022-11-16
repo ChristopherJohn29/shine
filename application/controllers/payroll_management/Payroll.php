@@ -172,6 +172,16 @@ class Payroll extends \Mobiledrs\core\MY_Controller {
 			$payroll_entity = new Payroll_entity([], $results);
 
 			$page_data['results'] = $payroll_entity->format_display_list();
+
+			$totalvisit = 0;
+			$totalsalary= 0;
+			foreach ($page_data['results'] as $key => $value) {
+				$totalvisit = $totalvisit + $value['total_visits'];
+				$totalsalary = $totalsalary + $value['total_salary'];
+			}
+
+			$page_data['totalvisit'] = $totalvisit;
+			$page_data['totalsalary'] = $totalsalary;
 		}
 
 		$this->twig->view('payroll_management/payroll/search', $page_data);
@@ -354,7 +364,7 @@ class Payroll extends \Mobiledrs\core\MY_Controller {
 			$providerDetails = $this->profile_model->record($provider_params);
 			
 			$this->email->from('michelle@shinemmg.com', 'Shine MMG');
-			// $this->email->reply_to('info@themobiledrs.com', 'The MobileDrs');
+			// $this->email->reply_to('michelle@themobiledrs.com', 'The MobileDrs');
 			$this->email->to($providerDetails->provider_email);
 			$this->email->subject('Your Payment Summary for ' . $page_data['payPeriod']);
 			$this->email->message($emailTemplate);
@@ -466,7 +476,7 @@ class Payroll extends \Mobiledrs\core\MY_Controller {
 			$providerDetails = $this->profile_model->record($provider_params);
 			
 			$this->email->from('michelle@shinemmg.com', 'Shine MMG');
-			// $this->email->reply_to('info@themobiledrs.com', 'The MobileDrs');
+			// $this->email->reply_to('michelle@themobiledrs.com', 'The MobileDrs');
 			$this->email->to($providerDetails->provider_email);
 			$this->email->subject('Your Payment Summary for ' . $page_data['payPeriod']);
 			$this->email->message($emailTemplate);

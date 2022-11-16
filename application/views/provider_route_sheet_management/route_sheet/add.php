@@ -195,10 +195,11 @@
 													<option value="">Select</option>
 														<option value="Follow-up Visit">Follow-up Visit</option>
 														<option value="Discharged from hospital">Discharged from hospital</option>
-														<option value="Patient is using assistive equipment">Patient is using assistive equipment</option>
 														<option value="Home Health Referral/Admission">Home Health Referral/Admission</option>
 														<option value="Transfer of Care">Transfer of Care</option>
-														<option value="Office Request Visit (Meds / Labs)">Office Request Visit (Meds / Labs)</option>
+														<option value="Office Request Visit (Meds / Labs)">Office Request Visit</option>
+														<option value="Patient Requested For Assessment Only">Patient Requested For Assessment Only</option>
+														
 												</select>
 											</div>
 

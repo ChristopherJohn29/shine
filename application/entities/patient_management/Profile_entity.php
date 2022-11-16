@@ -19,8 +19,10 @@ class Profile_entity extends \Mobiledrs\entities\Entity {
 	protected $patient_placeOfService;
 	protected $patient_pharmacy;
 	protected $patient_pharmacyPhone;
+	protected $patient_pharmacyAddress;
 	protected $patient_drug_allergy;
 	protected $spouse_checker;
+	
 
 	protected $hhc_id;
 	protected $hhc_name;
@@ -88,6 +90,7 @@ class Profile_entity extends \Mobiledrs\entities\Entity {
 	protected $pt_dateCreated;
 	protected $pt_mileage;
 	protected $pt_aw_billed;
+	protected $pt_bhi;
 	protected $pt_supervising_mdID;
 	protected $pt_archive;
 	protected $pt_status;
@@ -103,6 +106,20 @@ class Profile_entity extends \Mobiledrs\entities\Entity {
 	protected $non_admit_checked_by;
 	protected $is_ca;
 	protected $userId;
+	protected $is_early_discharge;
+	protected $early_discharge_date;
+	protected $is_early_discharge_checked_by;
+
+	protected $prsl_id;
+	protected $prsl_prsID;
+	protected $prsl_fromTime;
+	protected $prsl_toTime;
+	protected $prsl_patientID;
+	protected $prsl_hhcID;
+	protected $prsl_tovID;
+	protected $prsl_notes;
+	protected $prsl_patientTransID;
+	protected $prsl_dateRef;
 
 	protected $user_id;
 	protected $user_firstname;
@@ -115,16 +132,6 @@ class Profile_entity extends \Mobiledrs\entities\Entity {
 	protected $user_archive;
 	protected $user_photo;
 	
-	protected $prsl_id;
-	protected $prsl_prsID;
-	protected $prsl_fromTime;
-	protected $prsl_toTime;
-	protected $prsl_patientID;
-	protected $prsl_hhcID;
-	protected $prsl_tovID;
-	protected $prsl_notes;
-	protected $prsl_patientTransID;
-	protected $prsl_dateRef;
 
 
 	public function get_selected_gender(string $gender) : string

@@ -126,7 +126,8 @@
 												  		required="true" 
 												  		data-mobiledrs_autosuggest 
 												  		data-mobiledrs_autosuggest_url="{{ site_url('ajax/patient_management/profile/search') }}"
-												  		data-mobiledrs_autosuggest_dropdown_id="prsl_patientID_dropdown">
+												  		data-mobiledrs_autosuggest_dropdown_id="prsl_patientID_dropdown"
+														  name="prsl_patientID_name[]" >
 
 												  	<div data-mobiledrs_autosuggest_dropdown id="prsl_patientID_dropdown" style="width: 100%;">
 											  	  	</div>

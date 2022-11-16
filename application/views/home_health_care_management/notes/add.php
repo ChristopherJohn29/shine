@@ -21,8 +21,8 @@
 							{{ form_open("home_health_care_management/notes/save/add/#{ hhc_id }") }}
 							
 								<div class="row">
-									
-								<div class="xrx-info" style="min-height: initial;">
+
+									<div class="xrx-info" style="min-height: initial;">
 										
 										<div class="col-lg-6">
 											<p class="lead"><span>Home Health Care: </span> {{ record.hhc_name }}</p>

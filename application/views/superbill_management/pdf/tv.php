@@ -22,7 +22,7 @@
 			<th width="45px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8;">Date of Service</th>
 			<th width="35px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8;">Type of Visit</th>
 			<th width="35px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8;">Place of Service</th>
-			<th width="80px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8;">ICD-Code Diagnoses</th>
+			<th width="125px" bgcolor="#548bb8" style="color: white;border:1px solid #548bb8;">ICD-Code Diagnoses</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -70,7 +70,7 @@
 				<td width="35px" style="border-bottom: 1px solid #d2d6de;">
 					<?php echo $POS_entity->get_pos_name($transaction->pt_tovID); ?>
 				</td>
-				<td width="80px" style="border-bottom: 1px solid #d2d6de;">
+				<td width="125px" style="border-bottom: 1px solid #d2d6de;">
 					<?php echo $transaction->pt_icd10_codes; ?>
 				</td>
 			</tr>

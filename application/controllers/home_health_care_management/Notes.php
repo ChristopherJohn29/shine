@@ -18,7 +18,7 @@ class Notes extends \Mobiledrs\core\MY_Controller {
 		
 		$params = [
 			'key' => 'hhc_id',
-			'value' => $hhc_id
+        	'value' => $hhc_id
 		];
 
 		$page_data['record'] = $this->profile_model->record($params);
@@ -30,11 +30,11 @@ class Notes extends \Mobiledrs\core\MY_Controller {
 	{
 		$params = [
 			'key' => 'hhc_id',
-			'value' => $hhc_id
+        	'value' => $hhc_id
 		];
 
 		$page_data['profile'] = $this->profile_model->record($params);
-			
+
 		$params = [
 			'key' => 'hhcn_id',
         	'value' => $hhcn_id

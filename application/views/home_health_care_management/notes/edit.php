@@ -22,7 +22,7 @@
 							
 								<div class="row">
 
-								<div class="xrx-info" style="min-height: initial;">
+									<div class="xrx-info" style="min-height: initial;">
 										
 										<div class="col-lg-6">
 											<p class="lead"><span>Home Health Care: </span> {{ profile.hhc_name }}</p>

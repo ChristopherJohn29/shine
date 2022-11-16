@@ -212,36 +212,63 @@
 
                                                 {%  if transaction.not_our_md_checked_by %} 
                                                 - Last updated by {{transaction.not_our_md_checked_by}}
+                                                </span>
+                                                <br>
                                                 {% endif %}
-                                                    </span>
+                                                    
 
-                                                    <br>
+                                                    
                                                 {%  if transaction.no_homehealth_ref %}
                                                     <span class="visit_redbg">
                                                 
                                                     <input type="checkbox" class="form-check-input" id="no_homehealth_ref" name="no_homehealth_ref" checked value="1" onclick="return false;">
                                                     <label class="form-check-label" for="no_homehealth_ref">No Homehealth Referral</label>
-                                              
+                                                    
                                                 {% endif %}
 
                                                 {%  if transaction.no_homehealth_ref_checked_by %} 
                                                 - Last updated by {{transaction.no_homehealth_ref_checked_by}}
+                                                </span>
+                                                <br>
                                                 {% endif %}
-                                                    </span>
+                                                    
 
-                                                    <br>
+                                                   
                                                 {%  if transaction.non_admit %}
                                                     <span class="visit_redbg">
                                                 
                                                     <input type="checkbox" class="form-check-input" id="non_admit" name="non_admit" checked value="1" onclick="return false;">
                                                     <label class="form-check-label" for="non_admit">Non-admit</label>
-                                              
+                                                    
                                                 {% endif %}
 
+                                                
                                                 {%  if transaction.non_admit_checked_by %} 
                                                 - Last updated by {{transaction.non_admit_checked_by}}
+                                                </span>
+                                                <br>
                                                 {% endif %}
-                                                    </span>
+
+
+                                             
+
+                                                {%  if transaction.is_early_discharge %} 
+                                      
+                                                    <span class="visit_redbg">
+                                                    
+                                                    <input type="checkbox" class="form-check-input" id="is_early_discharge" name="is_early_discharge" checked value="1" onclick="return false;">
+                                                    <label class="form-check-label" for="non_admit">Early Discharged {{transaction.early_discharge_date|date('m/d/Y')}}</label>
+                                                   
+                                                {% endif %}
+
+                                                {%  if transaction.is_early_discharge_checked_by %} 
+                                                - Last updated by {{transaction.is_early_discharge_checked_by}}
+                                                </span>
+                                                {% endif %}
+
+                                                
+
+                                                    
                                                     
                                                 </div>
                                                 
